@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../img/yt.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: -220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/yt.png') no-repeat;
+    background-size: cover;
+    background-position-y: -210px;
+    transform: scaleX(-1);
+} */
+
+header {
+    background-color: #00000082;
+    box-shadow: 0 10px 40px #000;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px;
+    z-index: 99;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 40px;
+}
+
+.ah1 {
+    text-decoration: none;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.active {
+    padding: 10px 20px;
+    border: 2px solid #fff; /* Đặt đường viền cho trạng thái hover và trạng thái active */
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-left: 50px;
+    transition: .5s;
+}
+
+.active:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.active::after {
+    display: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: -6px;
+    background-color: #fff;
+    border-radius: 7px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+main {
+    position: relative;
+    top: 50px;
+    width: 400px;
+    height: 500px;
+    left: 270px;
+    background: transparent;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 50px 40px;
+}
+
+.wrapper h2 {
+    font-size: 2.2em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.text {
+    position: relative;
+    margin: 0 0 30px 0;
+}
+
+.text input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 3px solid #fff;
+    transition: .3s;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+
+.text input:focus + label, .text input:valid + label {
+    top: -3px;
+    font-size: 11px;
+}
+
+.btn-sub {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btn-sub p {
+    color: #fff;
+}
+
+.btn-sub p input {
+    accent-color: rgb(5, 5, 186);
+    margin-right: 3px;
+}
+
+.btn-sub a {
+    text-decoration: none;
+    color: #ff0a27;
+    transition: .3s;
+}
+
+.btn-sub a:hover {
+    text-decoration: underline;
+}
+
+.wrapper button {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: .4s;
+    margin-top: 30px;
+}
+
+.wrapper button:hover {
+    background-color: cyan;
+    color: #fff;
+    box-shadow: 0 0 0 2px cyan;
+}
+
+.text i {
+    position: absolute;
+    color: rgb(203, 203, 255);
+    font-size: 18px;
+    right: 10px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.text .fa-eye {
+    display: none;
+}
+
+.fa-eye-slash,
+.fa-eye {
+    cursor: pointer;
+}

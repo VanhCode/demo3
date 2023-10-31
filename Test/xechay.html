@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url('../img/bgrx.png') no-repeat;
+            background-size: cover;
+        }
+        
+        .image-box {
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        .image-box img {
+            width: 700px;
+            height: 400px;
+            transform: translateX(0);
+            transition: transform 8s linear;
+        }
+
+        .image-box.animate img {
+            transform: translateX(600%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-box">
+        <img src="../img/ae.png" alt="Your Image">
+        <button id="runButton">Run Animation</button>
+        <button id="stopButton">Stop Animation</button>
+    </div>
+</body>
+<script>
+    var runButton = document.getElementById('runButton');
+    var stopButton = document.getElementById('stopButton');
+    var imageBox = document.querySelector('.image-box');
+    var image = imageBox.querySelector('img');
+    var animationTimeout;
+
+    runButton.addEventListener('click', function () {
+        runAnimation();
+    });
+
+    stopButton.addEventListener('click', function () {
+        stopAnimation();
+    });
+
+    function runAnimation() {
+        imageBox.classList.add('animate');
+
+        animationTimeout = setTimeout(function () {
+            imageBox.classList.remove('animate');
+            runAnimation();
+        }, 2000); // Điều chỉnh thời gian dừng (trong ví dụ này, 2000ms tương ứng với 2 giây)
+    }
+
+    function stopAnimation() {
+        clearTimeout(animationTimeout);
+        imageBox.classList.remove('animate');
+    }
+</script>
+
+</html>

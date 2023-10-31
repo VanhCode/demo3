@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dk.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a class="ah1" href="../index.html"><h1>VANHMOTO</h1></a>
+            <nav>
+                <a href="">Trang chủ</a>
+                <a href="">Giới thiệu</a>
+                <a href="">Sản phẩm</a>
+                <a href="">Hỗ trợ</a>
+                <a class="active" href="../Đăng nhập/dn.html">Đăng nhập</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="wrapper">
+                <h2>Đăng ký</h2>
+                <form onsubmit="return send()">
+                    <div class="text">
+                        <input type="text" id="name" onblur="blurs()" oninput="clearError('name')" required>
+                        <label for="">Họ và tên</label>
+                        <div id="name_error"></div>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="text">
+                        <input type="text" id="email" onblur="blurs()" oninput="clearError('email')" required>
+                        <label for="">Email</label>
+                        <div id="email_error"></div>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="text">
+                        <input type="text" id="phone" onblur="blurs()" oninput="clearError('phone')" required>
+                        <label for="">Số điện thoại</label>
+                        <div id="phone_error"></div>
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="text">
+                        <input type="password" id="password" onblur="blurs()" oninput="clearError('password')" required>
+                        <label for="">Mật khẩu</label>
+                        <div id="password_error"></div>
+                        <i class="fa-regular fa-eye-slash"></i>
+                        <i class="fa-sharp fa-regular fa-eye"></i>
+                    </div> 
+                    <div class="text">
+                        <input type="password" id="newPassword" onblur="blurs()" oninput="clearError('newPassword')" required>
+                        <label for="">Nhập lại mật khẩu</label>
+                        <div id="newPassword_error"></div>
+                        <i class="fa-regular fa-eye-slash"></i>
+                        <i class="fa-sharp fa-regular fa-eye"></i>
+                    </div>
+                    <div class="btn-sub">
+                        <h5>Bạn đã có tài khoản? <a href="../Đăng ký/dk.html">Đăng nhập</a></h5>
+                    </div>
+                    <button type="submit">Xác nhận</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="dk.js"></script>
+</body>
+</html>
